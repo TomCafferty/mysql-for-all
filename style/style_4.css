@@ -1,0 +1,98 @@
+.sqlCode {
+    height:      100px;
+    margin:      0 10%;
+    padding:     5px;
+    text-align:  left;
+    white-space: normal;
+    width:       55%;
+}
+
+.wikiLimit {
+    width:       5%;
+	border:      1px solid #d0d6da;
+	background:  #e9edf0;
+	padding:     1px;
+	text-align:  right;
+	margin:      0 20px;
+	font-family: sans-serif; font-size: 1em;
+}
+
+.error {
+    color:  red;
+    margin: 0 0 0 15%;
+}
+
+form.db_form input.submit {
+    background-color: #1e5184; 
+    border-bottom:    0.1em solid #555; 
+    border-right:     0.1em solid #555; 
+    border-top:       0.1em solid #ccc; 
+    border-left:      0.1em solid #ccc; 
+    color:            #eee; 
+    display:          block; 
+    float:            right;
+    font:             76%/150% "Lucida Grande", Geneva, Verdana, Arial, Helvetica, sans-serif; 
+    font-size:        1em; 
+    font-weight:      bolder; 
+    margin:           0.2em; 
+    margin-right:     40px;
+    padding:          0.2em; 
+    width:            8em; text-align:center; 
+}
+
+form.db_form input.submit:hover, form.db_form input.submit:focus {background: #57ab44;}
+
+.dbTable {
+    background:      #c3d8ec url("images/dbTable.jpg") top left repeat-x;
+    border-collapse: collapse;
+    border:          1px solid #333;
+    color:           #000;
+    font-family:     "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    font-size:       0.9em;
+    padding:         0;
+}
+
+.dbTable caption {
+    caption-side: bottom;
+    font-size:    0.9em;
+    font-style:   italic;
+    padding:      0.5em 0;
+    text-align:   right;
+}
+
+.dbTable th, .dbTable td {
+    border:     1px dotted #666;
+    color:      #632a39;
+    padding:    0.5em;
+    text-align: left;
+}
+
+.dbTable th[scope=col] {
+    background-color: #8fadcc;
+    border-bottom:    2px solid #333;
+    border-right:     2px solid #333;
+    color:            #000;
+    font-size:        1.0em;
+    text-transform:   uppercase;
+}
+
+.dbTable th+th[scope=col] {
+    background-color: #7d98b3;
+    border-right:     1px dotted #666;
+    color:            #fff;
+}
+
+.dbTable th[scope=row] {
+    background-color: #b8cfe5;
+    border-right:     2px solid #333;
+}
+
+.dbTable tr.alt th, .dbTable tr.alt td, .dbTable tr.alt a {color: #2a4763;}
+
+.dbTable a {color: #632a39;}
+
+.dbTable tr:hover th[scope=row], .dbTable tr:hover td, .dbTable tr:hover a {
+    background-color: #2753d2;
+    color:            #fff;
+}
+.dbTable tr:hover a {border-bottom: 1px dotted #fff; }

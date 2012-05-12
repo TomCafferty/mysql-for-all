@@ -50,7 +50,7 @@ function outTable() {
     // Connect to database
     //
     if ($_SERVER['SERVER_NAME'] == 'localhost') {
-       define('DOC_ROOT', $_SERVER['DOCUMENT_ROOT'] . '/mysite');
+       define('DOC_ROOT', '..');
     } else {
        define('DOC_ROOT', $_SERVER['DOCUMENT_ROOT']);
     } 

@@ -47,7 +47,7 @@ function getSpecialOrders() {
             foreach ($filter[$tableNum] as $key => $filterMe) {
                 $filterValue = str_replace('.', '~#~', $filterMe);  // put dot (.) back (see workaround in describeTable function)
                 $value = $_POST[$filterValue];
-                $where .= ' ' . $filterMe . ' = "'. $value . '" AND ';
+                $where .= ' ' . $filterMe .' '. $value . ' AND ';
             }
         }
         //grab file relations if they exist

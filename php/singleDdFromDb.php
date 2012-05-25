@@ -18,23 +18,32 @@ function singledropdown($Field, $name, $strTableName, $selected) {
    // HTML Drop-Down Box Mark-up Code
    //
    $cxn = dbOpen();
- 
-   $dropdown = '<select name="'.$name.'" id="'.$name.'" style="width:95%" >'."\n";
   
+   // test if enum field
+   $typeQuery = 'show columns from '.$strTableName.' where field = \''.$Field.'\'';
+   $typeResult = mysqli_query($cxn, $typeQuery) or die( mysqli_error( $cxn ));
+   $row = mysqli_fetch_assoc ($typeResult); 
+   $findme = "enum";
+   $pos = stripos($row['Type'], $findme);  
+   if ($pos === false) {
+       // not enum so build text form field
+       $prompt = $Field. ' <input type="text" name="'.$name.'" class="rightMargin"/>';
+   } else {
+       // enum so build dropdown list
+       $prompt = '<select name="'.$name.'" id="'.$name.'" style="width:95%" >'."\n";
    $strQuery = "select distinct " . $Field . "  from $strTableName order by $Field asc ";
    $rsrcResult = mysqli_query($cxn, $strQuery) or die( mysqli_error( $cxn ));
 
    while($arrayRow = mysqli_fetch_assoc($rsrcResult)) {
       $strA = $arrayRow["$Field"];
       if ($strA <> $selected) 
-          $dropdown .=  "<option value=\"$strA\">$strA</option>\n";
+             $prompt .=  "<option value=\" = '$strA'\">$strA</option>\n";
       else
-          $dropdown .=  "<option value=\"$strA\" selected='selected'>$strA</option>\n";
+             $prompt .=  "<option value=\" = '$strA'\" selected='selected'>$strA</option>\n";
    }
-
-   $dropdown .=  "</select>";
+       $prompt .=  "</select>";
+   }
    mysqli_close($cxn);
-
-   return $dropdown;
+   return $prompt;
 }
 ?>

@@ -64,7 +64,7 @@ function getSpecialOrders() {
     $theQuery = ltrim(rtrim($select, ",")) . rtrim($from, ", ") . rtrim($where, " AND ");
     
     // pass the query to the next page as hidden POST data
-    $output .= "<input type='hidden' name='theQuery' value='".$theQuery."'/>"; 
+    $output .= '<input type="hidden" name="theQuery" value="'.$theQuery.'"/>'; 
     
     $output .= '<select class="indent2" name=orderBy><option value="none">none</option>';
     foreach ($tables as $tableNum => $table) {
